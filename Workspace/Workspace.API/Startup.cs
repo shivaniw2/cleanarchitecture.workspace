@@ -10,6 +10,7 @@ using Workspace.Infrastucture.Persistence.Cosmos.Configuration;
 using System.Reflection;
 using MediatR;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 namespace Workspace.API
 {
@@ -46,6 +47,7 @@ namespace Workspace.API
             }
 
             app.UseHttpsRedirection();
+            app.UseSerilogRequestLogging();
 
             app.UseRouting();
 
